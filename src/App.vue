@@ -15,7 +15,7 @@
         :valid="friend.valid"
         :key="friend.id"
         :id="friend.id"
-        @toggle-valid="toggleValid" 
+        @toggle-valid="toggleValid"
       />
     </ul>
   </section>
@@ -61,7 +61,8 @@ export default {
     },
 
     addContact(nameForm, phoneForm, emailForm ){
-      console.log("hello from child", nameForm, phoneForm, emailForm);
+      this.friends.push({name: nameForm, phone: phoneForm, email: emailForm})
+      console.log("hello from child", {name: nameForm, phone: phoneForm, email: emailForm});
     }
   },
 };
