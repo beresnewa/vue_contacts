@@ -2,7 +2,7 @@
   <li>
     <h2>
       <span>{{ name }} ({{ valid ? "valid" : "invalid" }})</span>
-      <button class="delete">X</button>
+      <button class="delete" @click="deleteContact">X</button>
       <!-- при нажатии на данную кномпу должно происходить удаление контакта -->
     </h2>
     <button @click="toggleDetails">
@@ -64,9 +64,13 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleValid() {
-      console.log(1);
       this.$emit("toggle-valid", this.id);
     },
+    deleteContact() {
+      console.log(2);
+      this.$emit("delete-contact", this.id)
+    }
+    
   },
 };
 </script>

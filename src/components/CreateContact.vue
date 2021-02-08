@@ -20,32 +20,12 @@
 <script>
 export default {
   name: "new-contact", // необезательное свойство 
-  props: {
-    id: String,
-    name: {
-      type: String,
-      required: true,
-      default: "0", 
-      validator: function(value) {
-        return value.length > 0;
-      },
-    },
-    phoneNumber: String,
-    emailAdress: String,
-  },
-
   data() {
     return {
       nameForm: '',
       phoneForm: '',
       emailForm: '',
     };
-  },
-
-  mounted() {
-    this.nameFrom = this.name;
-    this.phoneForm = this.phoneNumber;
-    this.emailForm = this.emailAdress;
   },
 
   methods: {

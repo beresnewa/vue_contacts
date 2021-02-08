@@ -16,6 +16,7 @@
         :key="friend.id"
         :id="friend.id"
         @toggle-valid="toggleValid"
+        @delete-contact="deleteContact"
       />
     </ul>
   </section>
@@ -62,8 +63,15 @@ export default {
 
     addContact(nameForm, phoneForm, emailForm ){
       this.friends.push({name: nameForm, phone: phoneForm, email: emailForm})
-      console.log("hello from child", {name: nameForm, phone: phoneForm, email: emailForm});
+    },
+
+    deleteContact(id) {
+      const friend = this.friends.find(friend => friend.id === id)
+      console.log(friend)
+      this.friends.splice(friend.id , 1)
     }
+
+
   },
 };
 </script>
