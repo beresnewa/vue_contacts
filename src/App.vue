@@ -68,7 +68,7 @@ export default {
     deleteContact(id) {
       const friend = this.friends.find(friend => friend.id === id)
       console.log(friend)
-      this.friends.splice(friend.id , 1)
+      this.friends.splice(id , 1)
     }
 
 
